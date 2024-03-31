@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+:root{
+    --color: #f1f1f1;
+    --bg: #D6955B;
+    --hover: #3f281d;
+    --reviews: #fff3db;
+}
+body.active{
+    --color: #3f281d;
+    --hover: #f1f1f1;
+    background: black;
+    color: white;
+}
+img{
+    width: 100%;
+}
+.btn{
+    color: var(--color);
+    background: var(--bg);
+    border-radius: 7px;
+    padding: 10px;
+    transition: .4s ease-in-out;
+}
+.btn:hover{
+    background: var(--hover);
+}
+header nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    height: 70px;
+    padding-inline: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav.active{
+    background: var(--hover);
+}
+header nav .logo{
+    font-size: 1.5rem;
+    color: var(--color);
+}
+header nav .menu{
+    display: flex;
+    column-gap: 2rem;
+}
+header nav .menu a{
+    color: var(--color);
+    transition: .4s ease-in-out;
+}
+header nav .menu a:hover{
+    color: var(--bg);
+}
+header nav .icones{
+    color: var(--color);
+    font-size: 1.5rem;
+    display: flex;
+    column-gap: 1rem;
+}
+header nav .icones .bx-cart:hover{
+    color: var(--bg);
+    cursor: pointer;
+}
+header nav .icones #src:hover{
+    cursor: pointer;
+    color: var(--bg);
+}
+header nav .icones #lune{
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+header nav .icones #lune:hover{
+    color: var(--bg);
+}
+header nav #burger{
+    display: none;
+    color: var(--color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+header nav #burger:hover{
+    color: var(--bg);
+}
+header nav .form{
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    transition: .4s ease-in-out;
+}
+header nav .form.active{
+    left: 0;
+}
+header nav .form input{
+    width: 100%;
+    height: 65px;
+    padding-left: 20px;
+    font-size: 1rem;
+}
+header nav .form input::placeholder{
+    font-size: 1rem;
+}
+header{
+    min-height: 100vh;
+    width: 100%;
+    background: url(images/fond.jpg)center/cover;
+}
+header .home{
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    padding-inline: 100px;
+}
+header .home .text h1{
+    font-size: clamp(30px, 5vw, 50px);
+    color: var(--color);
+    margin-bottom: 10px;
+}
+header .home .text p{
+    color: var(--color);
+    font-size: clamp(11px, 2vw, 15px);
+    margin-bottom: 20px;
+}
+section{
+    padding: 50px 100px;
+}
+#about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+}
+#about .image img{
+    border-radius: 7px;
+}
+#about .text h1{
+    font-size: 1.8rem;
+}
+#about .text p{
+    padding: 10px 0;
+}
+#about .text .test{
+    margin-bottom: 10px;
+}
+#products h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+#products .container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+#products .container .cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 7px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    padding: 20px;
+}
+#products .container .cards .image img{
+    height: 250px;
+    width: 100%;
+    padding: 20px;
+    object-fit: cover;
+    object-position: center;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 7px;
+}
+#products .container .cards .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 10px;
+}
+#products .container .cards .content .price{
+    background: var(--hover);
+    color: var(--color);
+    border-radius: 7px;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#reviews h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#reviews .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1.5rem;
+}
+#reviews .container .cartes{
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: .4s ease-in-out;
+}
+#reviews .container .cartes:hover{
+    background: var(--reviews);
+}
+#reviews .container .cartes .stars{
+    color: orange;
+}
+#reviews .container .cartes .text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#reviews .container .cartes .text p{
+    font-size: .9rem;
+    text-align: center;
+    
+}
+#reviews .container .cartes .text img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+footer{
+    background: var(--hover);
+    margin-top: 30px;
+    padding: 30px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 2rem;
+}
+footer .logos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .logos h2{
+    color: var(--color);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+footer .logos .icones{
+    display: flex;
+    gap: 10px;
+}
+footer .logos .icones a{
+    background: var(--bg);
+    color: white;
+    border-radius: 7px;
+    /*padding: 0 5px;*/
+    height: 30px;
+    width: 30px;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease-in-out;
+}
+footer .logos .icones a:hover{
+    background: var(--color);
+    color: var(--bg);
+}
+footer .support{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .support h2{
+    color: var(--color);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+footer .support .titles{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+footer .support .titles a{
+    color: var(--bg);
+    transition: .4s ease-in-out;
+}
+footer .support .titles a:hover{
+    color: var(--hover);
+}
+footer .guide{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .guide h2{
+    color: var(--color);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+footer .guide .titles{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+footer .guide .titles a{
+    color: var(--bg);
+    transition: .4s ease-in-out;
+}
+footer .guide .titles a:hover{
+    color: var(--hover);
+}
+footer .contact{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .contact h2{
+    color: var(--color);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+footer .contact .adress{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+footer .contact .adress span{
+    color: var(--color);
+}
+.copy{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copy p{
+    font-size: .8rem;
+}
+@media screen and (max-width: 770px) {
+    header nav{
+        height: 60px;
+        padding-inline: 20px;
+    }
+    header nav .menu{
+        flex-direction: column;
+        position: absolute;
+        top: -15rem;
+        left: 0;
+        width: 100%;
+        row-gap: 1.5rem;
+        background: var(--hover);
+        padding: 20px;
+        transition: .4s ease-in-out;
+    }
+    header nav .menu.active{
+        top: 60px;
+    }
+    header nav #burger{
+        display: block;
+    }
+    header .home{
+        padding: 40px 20px 0;
+        grid-template-columns: repeat(1, auto);
+    }
+    header .home .text h1{
+        letter-spacing: 2px;
+    }
+    header .home .image{
+        max-width: 300px;
+        margin-inline: auto;
+    }
+    section{
+        padding-inline: 20px;
+    }
+    #about{
+        justify-content: center;
+    }
+    #about .text{
+        text-align: center;
+    }
+    #products .container{
+        justify-content: center;
+    }
+    #reviews .container{
+        justify-content: center;
+    }
+}
